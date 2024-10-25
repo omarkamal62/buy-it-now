@@ -7,7 +7,9 @@ const getProductDetails = async (id) => {
 };
 
 const ProductDetailsPage = async ({ params }) => {
-  const product = await getProductDetails(params.id);
+  // Await params if it's a promise
+  const resolvedParams = await params;
+  const product = await getProductDetails(resolvedParams.id);
 
   return <ProductDetails product={product} />;
 };
