@@ -1,13 +1,24 @@
 import ListProducts from "@/components/products/ListProducts";
 import axios from "axios";
 
-const getProducts = async () => {
-  const { data } = await axios.get(`${process.env.API_URL}/api/products`);
+import queryString from "query-string";
+
+const getProducts = async (searchParams) => {
+  const urlParams = {
+    keyword: searchParams.keyword,
+    page: searchParams.page,
+  };
+
+  const searchQuery = queryString.stringify(urlParams);
+
+  const { data } = await axios.get(
+    `${process.env.API_URL}/api/products?${searchQuery}`
+  );
   return data;
 };
 
-export default async function Home() {
-  const productsData = await getProducts();
+export default async function Home({ searchParams }) {
+  const productsData = await getProducts(searchParams);
 
   return <ListProducts data={productsData} />;
 }
