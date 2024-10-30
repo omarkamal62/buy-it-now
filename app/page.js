@@ -4,6 +4,8 @@ import axios from "axios";
 import queryString from "query-string";
 
 const getProducts = async (searchParams) => {
+  searchParams = await searchParams;
+
   const urlParams = {
     keyword: searchParams.keyword,
     page: searchParams.page,
