@@ -140,3 +140,80 @@ const ProductDetails = ({ product }) => {
 };
 
 export default ProductDetails;
+
+export const ProductDetailsSkeleton = () => {
+  return (
+    <>
+      {/* Skeleton for Breadcrumbs */}
+      <div className="bg-gray-200 h-6 w-1/3 mb-4 animate-pulse"></div>
+
+      <section className="bg-white py-10">
+        <div className="container max-w-screen-xl mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-5">
+            {/* Skeleton for Image and Thumbnails */}
+            <aside>
+              <div className="border border-gray-200 shadow-sm p-3 text-center rounded mb-5 animate-pulse">
+                <div className="bg-gray-200 w-full h-80 mx-auto"></div>
+              </div>
+              <div className="flex space-x-2 overflow-auto text-center whitespace-nowrap">
+                {Array.from({ length: 4 }).map((_, index) => (
+                  <div
+                    key={index}
+                    className="inline-block bg-gray-200 rounded-md w-14 h-14 animate-pulse"
+                  ></div>
+                ))}
+              </div>
+            </aside>
+
+            {/* Skeleton for Product Details */}
+            <main>
+              <div className="h-8 bg-gray-200 rounded w-3/4 mb-4 animate-pulse"></div>
+
+              <div className="flex items-center space-x-2 mb-2">
+                <div className="h-5 bg-gray-200 rounded w-32 animate-pulse"></div>
+                <div className="h-5 bg-gray-200 rounded w-12 animate-pulse"></div>
+                <div className="h-2 w-2 bg-gray-200 rounded-full animate-pulse"></div>
+                <div className="h-5 bg-gray-200 rounded w-16 animate-pulse"></div>
+              </div>
+
+              <div className="h-6 bg-gray-200 rounded w-1/4 mb-4 animate-pulse"></div>
+
+              <div className="space-y-2 mb-4">
+                {Array.from({ length: 3 }).map((_, index) => (
+                  <div
+                    key={index}
+                    className="h-4 bg-gray-200 rounded w-full animate-pulse"
+                  ></div>
+                ))}
+              </div>
+
+              <div className="h-10 bg-blue-200 rounded w-1/3 mb-5 animate-pulse"></div>
+
+              <ul className="space-y-2">
+                {Array.from({ length: 3 }).map((_, index) => (
+                  <li
+                    key={index}
+                    className="h-4 bg-gray-200 rounded w-1/2 animate-pulse"
+                  ></li>
+                ))}
+              </ul>
+            </main>
+          </div>
+
+          <hr />
+
+          {/* Skeleton for Reviews Section */}
+          <div className="font-semibold mt-10">
+            <div className="h-8 bg-gray-200 rounded w-1/3 mb-6 animate-pulse"></div>
+            {Array.from({ length: 2 }).map((_, index) => (
+              <div
+                key={index}
+                className="h-20 bg-gray-200 rounded mb-4 animate-pulse"
+              ></div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};

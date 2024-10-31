@@ -2,6 +2,8 @@ import ProductDetails from "@/components/products/ProductDetails";
 import axios from "axios";
 
 const getProductDetails = async (id) => {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   const { data } = await axios.get(`${process.env.API_URL}/api/products/${id}`);
   return data?.product;
 };
