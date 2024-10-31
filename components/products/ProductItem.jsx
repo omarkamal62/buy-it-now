@@ -78,3 +78,33 @@ const ProductItem = ({ product }) => {
 };
 
 export default ProductItem;
+
+export const ProductItemSkeleton = () => {
+  return (
+    <article className="border border-gray-200 overflow-hidden bg-white shadow-sm rounded mb-5 animate-pulse">
+      <div className="flex flex-col md:flex-row">
+        {/* Image Placeholder */}
+        <div className="md:w-1/4 flex p-3">
+          <div className="bg-gray-200 rounded w-full h-48"></div>
+        </div>
+        {/* Text Placeholder */}
+        <div className="md:w-2/4 p-4 space-y-2">
+          <div className="h-6 bg-gray-200 rounded w-3/4"></div>
+          <div className="flex space-x-2 items-center">
+            <div className="h-4 bg-gray-200 rounded w-1/4"></div>
+            <b className="text-gray-300">•</b>
+            <div className="h-4 bg-gray-200 rounded w-1/6"></div>
+          </div>
+          <div className="h-4 bg-gray-200 rounded w-full"></div>
+          <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+        </div>
+        {/* Price and Button Placeholder */}
+        <div className="md:w-1/4 border-t lg:border-t-0 lg:border-l border-gray-200 p-5">
+          <div className="h-8 bg-gray-200 rounded w-1/2 mb-2"></div>
+          <div className="h-4 bg-gray-200 rounded w-1/3 mb-2"></div>
+          <div className="h-10 bg-blue-200 rounded w-3/4"></div>
+        </div>
+      </div>
+    </article>
+  );
+};

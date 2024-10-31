@@ -4,6 +4,7 @@ import axios from "axios";
 import queryString from "query-string";
 
 const getProducts = async (searchParams) => {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   searchParams = await searchParams;
 
   const urlParams = {
