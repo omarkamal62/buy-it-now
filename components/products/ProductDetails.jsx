@@ -2,7 +2,7 @@
 import { useRef, useContext } from "react";
 import StarRatings from "react-star-ratings";
 import Breadcrumbs from "../layout/Breadcrumbs";
-import CartContext from "@/context/CartContext";
+import CartContext from "../../context/CartContext";
 
 const ProductDetails = ({ product }) => {
   const { addItemToCart } = useContext(CartContext);

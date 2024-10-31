@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import Link from "next/link";
 import Search from "./Search";
 import Image from "next/image";
-import CartContext from "@/context/CartContext";
+import CartContext from "../../context/CartContext";
 
 const Header = () => {
   const { cart } = useContext(CartContext);

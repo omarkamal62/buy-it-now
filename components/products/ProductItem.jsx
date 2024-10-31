@@ -4,7 +4,7 @@ import Link from "next/link";
 import StarRatings from "react-star-ratings";
 import Image from "next/image";
 import { useContext } from "react";
-import CartContext from "@/context/CartContext";
+import CartContext from "../../context/CartContext";
 
 const ProductItem = ({ product }) => {
   const { addItemToCart } = useContext(CartContext);

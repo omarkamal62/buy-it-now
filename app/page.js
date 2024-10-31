@@ -1,4 +1,4 @@
-import ListProducts from "@/components/products/ListProducts";
+import ListProducts from "../components/products/ListProducts";
 import axios from "axios";
 
 import queryString from "query-string";
