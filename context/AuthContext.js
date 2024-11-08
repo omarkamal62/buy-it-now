@@ -35,6 +35,21 @@ export const AuthProvider = ({ children }) => {
     setError(null);
   };
 
+  const addNewAddress = async (address) => {
+    try {
+      const { data } = await axios.post(
+        `${process.env.API_URL}/api/address`,
+        address
+      );
+
+      if (data) {
+        router.push("/me");
+      }
+    } catch (error) {
+      setError(error?.response?.data?.message);
+    }
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -42,6 +57,7 @@ export const AuthProvider = ({ children }) => {
         error,
         setUser,
         registerUser,
+        addNewAddress,
         clearErrors,
       }}
     >

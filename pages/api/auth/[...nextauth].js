@@ -39,6 +39,20 @@ export default async function auth(req, res) {
     pages: {
       signIn: "/login",
     },
+    callbacks: {
+      jwt: async ({ user, token }) => {
+        user && (token.user = user);
+
+        return token;
+      },
+      session: async ({ token, session }) => {
+        session.user = token.user;
+
+        delete session?.user?.password;
+
+        return session;
+      },
+    },
     secret: process.env.NEXTAUTH_SECRET,
   });
 }
